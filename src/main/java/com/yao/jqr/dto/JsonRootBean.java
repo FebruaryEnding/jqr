@@ -1,109 +1,86 @@
+/**
+  * Copyright 2019 bejson.com 
+  */
 package com.yao.jqr.dto;
 
+/**
+ * Auto-generated: 2019-10-17 17:7:53
+ *
+ * @author bejson.com (i@bejson.com)
+ * @website http://www.bejson.com/java2pojo/
+ */
 public class JsonRootBean {
 
-    private String anonymous;
-    private long font;
-    private long group_id;
-    private String message;
-    private int message_id;
-    private String message_type;
-    private String post_type;
-    private String raw_message;
-    private long self_id;
-    private Sender sender;
-    private String sub_type;
-    private long time;
-    private long user_id;
-    public void setAnonymous(String anonymous) {
-         this.anonymous = anonymous;
+    private String ret;
+    private String url;
+    private String content;
+    private String picUrl;
+    private String taopwdOwnerId;
+    private String validDate;
+    private String pj;
+    private int code;
+    private String msg;
+    public void setRet(String ret) {
+         this.ret = ret;
      }
-     public String getAnonymous() {
-         return anonymous;
+     public String getRet() {
+         return ret;
      }
 
-    public void setFont(long font) {
-         this.font = font;
+    public void setUrl(String url) {
+         this.url = url;
      }
-     public long getFont() {
-         return font;
-     }
-
-    public void setGroup_id(long group_id) {
-         this.group_id = group_id;
-     }
-     public long getGroup_id() {
-         return group_id;
+     public String getUrl() {
+         return url;
      }
 
-    public void setMessage(String message) {
-         this.message = message;
+    public void setContent(String content) {
+         this.content = content;
      }
-     public String getMessage() {
-         return message;
-     }
-
-    public void setMessage_id(int message_id) {
-         this.message_id = message_id;
-     }
-     public int getMessage_id() {
-         return message_id;
+     public String getContent() {
+         return content;
      }
 
-    public void setMessage_type(String message_type) {
-         this.message_type = message_type;
+    public void setPicUrl(String picUrl) {
+         this.picUrl = picUrl;
      }
-     public String getMessage_type() {
-         return message_type;
-     }
-
-    public void setPost_type(String post_type) {
-         this.post_type = post_type;
-     }
-     public String getPost_type() {
-         return post_type;
+     public String getPicUrl() {
+         return picUrl;
      }
 
-    public void setRaw_message(String raw_message) {
-         this.raw_message = raw_message;
+    public void setTaopwdOwnerId(String taopwdOwnerId) {
+         this.taopwdOwnerId = taopwdOwnerId;
      }
-     public String getRaw_message() {
-         return raw_message;
-     }
-
-    public void setSelf_id(long self_id) {
-         this.self_id = self_id;
-     }
-     public long getSelf_id() {
-         return self_id;
+     public String getTaopwdOwnerId() {
+         return taopwdOwnerId;
      }
 
-    public void setSender(Sender sender) {
-         this.sender = sender;
+    public void setValidDate(String validDate) {
+         this.validDate = validDate;
      }
-     public Sender getSender() {
-         return sender;
-     }
-
-    public void setSub_type(String sub_type) {
-         this.sub_type = sub_type;
-     }
-     public String getSub_type() {
-         return sub_type;
+     public String getValidDate() {
+         return validDate;
      }
 
-    public void setTime(long time) {
-         this.time = time;
+    public void setPj(String pj) {
+         this.pj = pj;
      }
-     public long getTime() {
-         return time;
+     public String getPj() {
+         return pj;
      }
 
-    public void setUser_id(long user_id) {
-         this.user_id = user_id;
+    public void setCode(int code) {
+         this.code = code;
      }
-     public long getUser_id() {
-         return user_id;
+     public int getCode() {
+         return code;
+     }
+
+    public void setMsg(String msg) {
+         this.msg = msg;
+     }
+     public String getMsg() {
+         return msg;
      }
 
 }
