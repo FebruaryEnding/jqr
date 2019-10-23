@@ -1,7 +1,7 @@
 /**
   * Copyright 2019 bejson.com 
   */
-package com.yao.jqr.dto;
+package com.yao.jqr.dto.JOSNObject;
 
 /**
  * Auto-generated: 2019-10-17 17:7:53
