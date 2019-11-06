@@ -42,6 +42,7 @@ public class UserServiceImpl implements IUserService {
         String salt = generateSalt();
         entity.setPassword(DigestUtils.md5Hex(salt + entity.getPassword()));
         entity.setId(null);
+        entity.setSalt(salt);
         save(entity);
     }
 
@@ -80,6 +81,11 @@ public class UserServiceImpl implements IUserService {
     @Override
     public UserEntity findByPhone(String phone) {
         return userEntityRepository.findByPhone(phone);
+    }
+
+    @Override
+    public UserEntity findByName(String userName) {
+        return userEntityRepository.findByName(userName);
     }
 
 }

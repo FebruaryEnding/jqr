@@ -17,10 +17,10 @@ public class CustomRealm extends AuthorizingRealm {
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        String phone = (String) token.getPrincipal();
+        String userName = (String) token.getPrincipal();
         String password = new String((char[]) token.getCredentials());
         IUserService userService = ContextUtils.getApplicationContext().getBean(IUserService.class);
-        UserEntity userEntity = userService.findByPhone(phone);
+        UserEntity userEntity = userService.findByName(userName);
         if (userEntity == null) {
             throw new UnknownAccountException("登录失败：用户不存在!");
         }

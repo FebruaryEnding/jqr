@@ -9,4 +9,6 @@ public interface UserEntityRepository extends JpaSpecificationExecutor<UserEntit
     UserEntity findByIdAndStatus(String id, Integer status);
 
     UserEntity findByPhone(String phone);
+
+    UserEntity findByName(String userName);
 }

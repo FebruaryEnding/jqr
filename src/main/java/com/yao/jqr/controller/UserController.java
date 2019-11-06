@@ -20,12 +20,6 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @ApiOperation("注册")
-    @PostMapping("")
-    public Result regest(@RequestBody UserRequestDTO userRequestDTO){
-        userService.regest(userRequestDTO);
-        return new Result.Builder().uiMsg(UIMsgConstant.OPERATE_SUCCESS).build();
-    }
 
     @ApiOperation("根据id查询")
     @GetMapping("/{id}")

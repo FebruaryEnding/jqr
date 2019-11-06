@@ -21,4 +21,6 @@ public interface IUserService {
     PageResult pageQuery(UserQuery query);
 
     UserEntity findByPhone(String phone);
+
+    UserEntity findByName(String userName);
 }
