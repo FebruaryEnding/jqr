@@ -26,21 +26,16 @@ public class LoginController {
 
     @ApiOperation("登录")
     @PostMapping("/login")
-    public Result login(@RequestBody LoginDTO loginDTO) {
-        try {
-            Subject subject = SecurityUtils.getSubject();
-            UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(loginDTO.getUserName(), loginDTO.getPassword());
-            subject.login(usernamePasswordToken);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new Result.Builder().success(false).msg(e.getMessage()).uiMsg(e.getMessage()).build();
-        }
-        return new Result.Builder().uiMsg("登录成功").build();
+    public Result login(@RequestBody LoginDTO loginDTO) throws Exception {
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(loginDTO.getUserName(), loginDTO.getPassword());
+        subject.login(usernamePasswordToken);
+        return new Result.Builder().success(true).uiMsg("登录成功").build();
     }
 
     @ApiOperation("注册")
     @PostMapping("/regest")
-    public Result regest(@RequestBody UserRequestDTO userRequestDTO){
+    public Result regest(@RequestBody UserRequestDTO userRequestDTO) throws Exception {
         userService.regest(userRequestDTO);
         return new Result.Builder().uiMsg(UIMsgConstant.OPERATE_SUCCESS).build();
     }

@@ -37,8 +37,12 @@ public class UserServiceImpl implements IUserService {
 
 
     @Override
-    public void regest(UserRequestDTO userRequestDTO) {
+    public void regest(UserRequestDTO userRequestDTO) throws Exception {
         UserEntity entity = BeanCopyUtils.copy(userRequestDTO, UserEntity.class);
+        UserEntity userEntity = userEntityRepository.findByName(entity.getName());
+        if (userEntity != null) {
+            throw new Exception("请勿重复注册");
+        }
         String salt = generateSalt();
         entity.setPassword(DigestUtils.md5Hex(salt + entity.getPassword()));
         entity.setId(null);
@@ -69,7 +73,7 @@ public class UserServiceImpl implements IUserService {
             @Override
             public Predicate toPredicate(Root<UserEntity> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
                 List<Predicate> predicates = new ArrayList<>();
-                predicates.add(criteriaBuilder.equal(root.get("status"),DataStatus.NORMAL.getStatus()));
+                predicates.add(criteriaBuilder.equal(root.get("status"), DataStatus.NORMAL.getStatus()));
                 return criteriaQuery.where(predicates.toArray(new Predicate[predicates.size()])).getRestriction();
             }
         }, new PageRequest(query.getPage(), query.getPageSize()));

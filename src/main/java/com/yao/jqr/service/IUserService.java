@@ -10,7 +10,7 @@ import org.springframework.data.domain.Page;
 
 public interface IUserService {
 
-    void regest(UserRequestDTO userRequestDTO);
+    void regest(UserRequestDTO userRequestDTO) throws Exception;
 
     UserEntity save(UserEntity userEntity);
 
